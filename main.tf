@@ -5,7 +5,9 @@ provider "aws" {
 }
 
 resource "aws_instance" "web2" {
-   ami  = "ami-026dea5602e368e96"
+   ami  = "ami-0693ba315aa63cf93"
+  ami-0693ba315aa63cf93
+
    instance_type = "t2.micro"
   tags = {
     Name = "webserver1"
