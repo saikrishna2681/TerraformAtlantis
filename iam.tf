@@ -20,7 +20,7 @@ resource "aws_iam_role_policy" "test_policy" {
 
 resource "aws_iam_instance_profile" "test_profile" {
   name = "test_profile"
-  role = "${aws_iam_role.test_role.name}"
+  role = "aws_iam_role.test_role.name"
 }
 
 resource "aws_iam_role" "test_role" {
