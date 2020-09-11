@@ -1,13 +1,20 @@
 provider "aws" {
-  region = "us-east-2"
-  access_key="AKIA5CAEYHEB7RYQ4LL4"
-  secret_key="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"
+  region = "ap-southeast-1"
+  access_key="AKIAUJOU75DF7ITWIVU7"
+  secret_key="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"
 }
 
-resource "aws_instance" "web" {
-   ami  = "ami-026dea5602e368e96"
-   instance_type = "t2.micro"
-  tags = {
-    Name = "webserver2"
+resource "aws_waf_ipset" "ipset" {
+  name = "tfIPSet"
+
+  ip_set_descriptors {
+    type  = "IPV4"
+    value = "192.0.7.0/24"
+  }
+
+  ip_set_descriptors {
+    type  = "IPV4"
+    value = "10.16.16.0/16"
   }
 }
+
